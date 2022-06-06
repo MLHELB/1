@@ -1,0 +1,830 @@
+html{
+    scroll-behavior:smooth;
+    
+}
+body{
+    font-family: "Merriweather", serif;
+}
+
+.contenedor-global{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:repeat(6,auto);
+    grid-template-areas:  "menúP menúP menúP"
+                          "imagenF imagenF imagenF"
+                          "nosotros nosotros nosotros"
+                          "platos platos platos"
+                          "footerContac footerContac footerContac"
+                           "pieDePagFinal pieDePagFinal pieDePagFinal";
+                                          
+}
+/* ------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------ */
+/* ----------------------------------Menú---------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------ */
+
+.menúPrincipal{
+    grid-area: menúP;
+    
+}
+.menúPrincipal__sticky{
+    position: sticky;
+    top: 0; 
+    background: #141E30;  
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  
+    background: linear-gradient(to right, #243B55, #141E30); 
+    z-index: 20;
+   
+}
+.menúPrincipal__lista{
+    display: flex;
+    margin:auto;
+    width: 80%;
+    height: 90px;
+}
+.menúPrincipal__lista-a{
+     color: #f8f2f8;
+     outline: none;
+     text-decoration: none;
+     width: 100%;
+     text-align: center;
+     font-size: 25px;  
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     
+}
+.menúPrincipal__imagen{
+     width: 105px;   
+}
+.menúPrincipal__lista-a:hover{
+	color: #fff;
+    text-decoration:underline;
+}
+/* ------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------ */
+/* ----------------------------------Imagen-------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------ */
+.imagenFondo{
+    grid-area: imagenF;
+    position: relative;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid #fff;   
+}
+.imagenFondo::before{
+    content:" ";
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+    background-image: url(Pictures/restaurant2.webp);
+    filter:brightness(0.4);
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+.descripcion{  
+    text-align: center;  
+    animation-fill-mode:forwards ;
+    animation-name: presentacion;
+    animation-duration: 8s;
+    
+}
+.descripcion__titulo{
+    font-size: 125px;
+    color: #f8fbf5fa;
+    font-family: 'Playball', cursive;
+}
+.descripcion__parrafo{
+    color: #fff;
+    font-weight:lighter;
+    font-size: 25px;
+    text-shadow: 0px 0px 5px #000;
+    line-height:50px;
+    text-align: justify;
+    padding: 0 20px;
+}
+
+@keyframes presentacion {
+    0%{opacity: 0;}
+    
+}
+/* ------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------ */
+/* ----------------------------------Nosotros------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------ */
+
+.nosotros{
+    grid-area: nosotros;
+    background: #000000;  
+    background: -webkit-linear-gradient(to right, #434343, #000000);  
+    background: linear-gradient(to left, #434343, #000000); 
+    color: #fff;
+    padding: 20px 0;
+   
+}
+.nosotros__titulo{
+    display: flex;
+    justify-content: left;
+    padding-left: 10px;
+}
+.nosotros__contenedor{
+    display: flex;
+    flex-direction: row; 
+    
+}
+
+.contenedor-dinamico{
+    width: 55%;
+    overflow: hidden; 
+}
+
+.contenedor-dinamico__lista{
+  display: flex;
+  width: 300%;
+  animation: cambio 15s infinite alternate;
+ 
+}
+.li__imagen{
+    list-style: none;
+    width: 100%;
+}
+.nosotros__imagen-1{
+    width: 100%;
+    height: 100%; 
+}
+
+
+@keyframes cambio {
+    0%{margin-left: 0;}
+    30%{margin-left:0;}
+
+    40%{margin-left: -100%;}
+    70%{margin-left: -100%;}
+
+    80%{margin-left: -200%;}
+    100%{margin-left: -200%;}
+}
+.nosotros__descripcion{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+}
+.nosotros__descripcion-parrafo{
+    font-size: 20px;
+    padding-left: 10px;
+    line-height: 34px;
+    text-align: left;
+    text-align: justify;
+    
+}
+.nosotros__horarios{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.nosotros__horarios-titulo{
+    padding: 8px;
+    font-size: 30px;
+    text-align: center;
+}
+.nosotros__horarios-particular{
+    padding: 8px;
+    border-bottom: 1px solid #88ecf5;
+    font-size: 18px;
+}
+
+#map{
+    width: 100%;
+    height:400px;
+    border-bottom: 1px solid #fff;
+}
+.mapa{
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------ */
+/* ----------------------------------Platos-------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------ */
+.platos{
+    grid-area: platos;
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* height: 550px; */
+    border-bottom: 1px solid #fff;
+}
+
+.titulo{
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.imagenes{
+    margin: auto;
+    width: 80%;
+    overflow: hidden;
+    
+}
+.imagenes__platos{
+    display: flex;
+    width: 700%;
+    height: 500px;
+    animation: cambio2 30s infinite alternate;
+    
+}
+.imagenes__platos-comida{
+    list-style: none;
+    height: 100%;  
+   
+}
+.imagenes__platos-especialidad{
+    width: 100%;
+    height: 100%;
+    object-fit:cover; 
+}
+
+.contenedor__imagen{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.nombre__imagen{
+   font-size: 1.3em;
+   color: #fff;
+   background:linear-gradient(#ffffff00,#000000) ;
+   position: absolute;
+   bottom:0;
+   width: 100%;
+}
+@keyframes cambio2 {
+    0%{margin-left: 0%;}
+    10%{margin-left: 0%;}
+
+    15%{margin-left: -100%;}
+    25%{margin-left: -100%;}
+
+    30%{margin-left: -200%;}
+    40%{margin-left: -200%;}
+
+    45%{margin-left: -300%;}
+    55%{margin-left: -300%;}
+
+    60%{margin-left: -400%;}
+    70%{margin-left: -400%;}
+
+    75%{margin-left: -500%;}
+    85%{margin-left: -500%;}
+
+    90%{margin-left: -600%;}
+    100%{margin-left: -600%;}
+}
+
+.carta__contenedor{
+   height: auto;
+   margin: 20px 0;
+  padding-bottom: 20px;
+}
+.carta__contenedor1{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    
+}
+
+.carta__contenedor2{
+    display: flex;
+    justify-content: center;
+    
+}
+.carta__contenedor-foto{
+    max-height: 700px;
+    padding: 0 5px;
+   
+    
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------ */
+/* -------------------------------Contacto--------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------ */
+.footerContacto{
+    grid-area:footerContac;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-bottom: 1px solid #fff;
+    padding: 20px 0;
+    
+}
+.contacto{
+    text-align: center;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #f8f2f8;    
+}
+.contacto__{
+    padding-top: 8px;
+    font-size: 20px;
+}
+.tel{
+    font-size: 20px;
+    text-decoration: none;
+    color: #fff;
+}
+.tel:hover{
+    color: #2b4df6;
+}
+.mail{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.redes{
+    width: 50%;
+    color: #fff;
+}
+.redes__titulo{
+    text-align: center;
+    font-size: 32px;
+}
+.redes__contenedor{
+    display: flex;
+    justify-content: center; 
+   
+}
+.redes__sociales{
+    color: #fff;
+    font-size: 28px;
+    text-decoration: none; 
+    padding: 8px;
+}
+.fb:hover{
+    color: #2b4df6;
+    transition: 2s;
+}
+.insta:hover{
+    color: #f976ec;
+    transition: 2s;
+}
+.twitter:hover{
+    color: #07faf2;
+    transition: 2s;
+}
+.link:hover{
+    color: #47e631;
+    transition: 2s;
+}
+.pagos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pagos__acercate{
+    font-size: 20px;
+    padding-top: 15px;
+}
+.pagos__imagen{
+    height: 50px;
+    padding-top: 12px;
+}
+/* ------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------ */
+/* -------------------------------Contacto--------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------ */
+.piedepagfinal{
+    grid-area: pieDePagFinal;
+    background: #141E30;  
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  
+    background: linear-gradient(to right, #243B55, #141E30); 
+    color: #fff;
+    height: 100%;
+}
+
+.copyrigth{
+    padding: 20px;
+}
+.copyrigth__copy1{
+    padding-left: 5px;
+}
+.tldr{
+    padding-top: 10px;
+}
+.legal{
+    padding-left: 20px;
+}
+.legal__demas{
+    text-decoration: none;
+    padding: 5px,0px;
+    color: #fff;
+}
+.parteFinal{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    align-items: flex-end;
+}
+.copy2{
+    padding-left: 20px;
+    padding-bottom: 3px;
+}
+.misredes__senks:hover{
+    font-size: 28px;
+    opacity: 0.5;
+}
+
+.misredes__senks{
+   font-size: 30px;
+   padding: 0px 10px;
+   color: #c005fe;
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------ */
+/* -------------------------------MQ--------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------ */
+
+@media screen and (max-width:767px){
+    .contenedor-global{
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows:repeat(6,auto);
+        grid-template-areas:  "menúP"
+                              "imagenF "
+                              "nosotros "
+                              "platos "
+                              "footerContac"
+                               "pieDePagFinal";                                                                        
+    }
+    .menúPrincipal{
+        grid-area: menúP;  
+    } 
+    .menúPrincipal__lista{
+        width:100%; 
+    }
+    .menúPrincipal__lista-a{
+         font-size: 20px;
+         padding: 0 10px;
+    }
+    .menúPrincipal__imagen{
+         display: none;   
+    }
+/* ----------------------------------------------------------------------------------------------------------------- */
+    .imagenFondo{
+        grid-area: imagenF;
+        height: 550px;
+    }
+/* ----------------------------------------------------------------------------------------------------------------- */
+    .nosotros{
+        grid-area: nosotros;
+        padding:0px;  
+    }
+    .nosotros__contenedor{
+        display: flex;
+        flex-direction: column; 
+        
+    }.descripcion{  
+        text-align: center;         
+    }
+    .descripcion__titulo{
+        font-size: 85px;
+        padding: 0 10px;
+    }
+    .descripcion__parrafo{
+        font-size: 18px;
+        line-height:30px;
+        text-align:justify;
+        padding:0 15px;
+        letter-spacing:-1px;
+    }
+    .contenedor-dinamico{
+        width: 100%;
+    }
+    .nosotros__descripcion{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        padding: 10px ;
+        text-align:center;
+    }
+    .nosotros__descripcion-parrafo{
+        font-size: 15px;
+        padding: 0px;
+        line-height: normal;
+        text-align: justify;
+        letter-spacing:1px;
+    }
+    .nosotros__horarios-titulo{
+      font-size: 40px;  
+    }
+    .nosotros__horarios-particular{
+        font-size: 22px;
+    }
+    
+ 
+    /* ----------------------------------------------------------------------------------------------------------------- */
+    .platos{
+        grid-area: platos;
+    } 
+    .titulo{
+        font-size: 12px;
+        padding: 10px 0;
+    }
+    
+    .imagenes{
+        margin:0;
+        width: 100%;        
+    }
+    .nombre__imagen{
+       font-size: 20px;
+    }
+    .carta__contenedor{
+        height: auto;
+        margin: 0px ;
+       
+     }
+     .carta__contenedor1{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         margin: 10px 0;
+         
+     }
+     
+     .carta__contenedor2{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         
+     }
+     .carta__contenedor-foto{
+         object-fit: cover;
+         max-height:none;
+         width: 450px;
+         object-fit: cover;
+         padding: 20px;
+         border-top-right-radius:0px;
+         border-bottom-left-radius:0px;
+         text-align: center;
+     }
+     #map{
+        width: 100%;
+        height:400px;
+        border-bottom: 1px solid #fff;
+        padding:0;
+    }
+    .mapa{
+        height: 100%;
+        width: 100%;
+        border: none;
+    }
+/* ----------------------------------------------------------------------------------------------------------------- */     
+    
+    .footerContacto{
+        grid-area:footerContac;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 20px 0;
+        
+    }
+    .contacto{
+        font-size: 15px;   
+    }
+    .contacto__{
+        padding-top: 8px;
+        font-size: 22px;
+        padding: 10px 0;
+    }
+    .tel{
+        font-size: 20px;
+    }
+    
+    
+    
+    .redes{
+        width: 50%;
+        color: #fff;
+    }
+    .redes__titulo{
+        text-align: center;
+        font-size:30px;
+    }
+    .redes__contenedor{
+        display: flex;
+        justify-content: center; 
+       
+    }
+    .redes__sociales{
+        color: #fff;
+        font-size: 28px;
+        text-decoration: none; 
+        padding: 8px;
+    }
+ 
+    .pagos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .pagos__acercate{
+        padding-left: 20px;
+        font-size: 22px;
+        padding-top: 34px;
+    }
+    .pagos__imagen{
+        height: 85px;
+        padding-top: 40px;
+    }
+/* ----------------------------------------------------------------------------------------------------------------- */  
+    
+    
+    .piedepagfinal{
+        grid-area: pieDePagFinal;
+    }
+    
+    .copyrigth{
+        padding: 20px;
+        font-size: 20px;
+    }
+    
+    .tldr{
+        padding-top: 10px;
+    }
+    .legal{
+        font-size: 18px;
+    }
+    .copy2{
+        padding-bottom: 5px;
+        font-size: 15px;
+    }
+    .swcps{
+        font-size: 15px;
+    }
+    .misredes__senks{
+       font-size: 20px;
+    }
+        
+} 
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:768px ){
+    
+    .menúPrincipal__lista{
+        width: 100%;
+    }
+    .menúPrincipal__lista-a{
+         padding: 0 10px;
+    }
+   
+    .nosotros__contenedor{
+        flex-direction: column;
+    
+    }
+    
+    .contenedor-dinamico{
+        width: 100%;  
+    }
+    
+    .contenedor-dinamico__lista{
+      height: 500px; 
+    }
+    .nosotros{
+        padding: 0;
+    }
+    .nosotros__descripcion{
+        width: 100%;
+        text-align: center;  
+    }
+    .nosotros__descripcion-parrafo{
+        font-size: 22px;
+        line-height: 30px;
+        padding-top: 20px;
+        
+    }
+    .nosotros__horarios{
+        padding-bottom: 20px;
+    }
+    .nosotros__horarios-titulo{
+        padding: 8px;
+        font-size: 45px;
+    }
+    .nosotros__horarios-particular{
+        padding: 10px;
+        font-size: 28px;
+    }
+    
+    .carta__contenedor{
+        height: auto;
+        margin: 0px ;
+       
+     }
+     .carta__contenedor1{
+         display: flex;
+         flex-direction: column;
+         align-items: center;  
+     }
+     
+     .carta__contenedor2{
+         display: flex;
+         align-items: center;
+         flex-direction: column;
+     }
+     .carta__contenedor-foto{
+         width: 500px;
+         padding: 15px 0px;
+     }
+}
+
+
+@media screen and (min-width:1084px){
+    .nosotros__contenedor{
+        flex-direction: row;
+        padding: 20px 0;
+        
+    }
+    
+    .contenedor-dinamico{
+        width: 55%;   
+    }
+    
+    .contenedor-dinamico__lista{
+      height: 500px;
+    }
+    .descripcion__parrafo{
+        text-align:inherit;  
+    }
+    .nosotros__descripcion{
+        width: 45%;
+        text-align: center;
+        box-sizing: content-box; 
+    }
+    .nosotros__descripcion-parrafo{
+        font-size: 22px;
+        line-height: 30px;
+        text-align: center;
+    }
+    .nosotros__horarios{
+        padding-bottom: 20px;
+    }
+    .nosotros__horarios-titulo{
+        padding: 8px;
+        font-size: 50px;
+    }
+    .nosotros__horarios-particular{
+        padding: 10px;
+        font-size: 25px;
+    }
+  
+    .contenedor-dinamico__lista{
+      height: 550px;
+    }
+     .carta__contenedor1,.carta__contenedor2{
+         flex-direction: row;   
+     }
+     .carta__contenedor-foto{
+         padding: 0 5px;
+     }
+}
+@media screen and (min-width:1600px){
+    .nosotros__descripcion-parrafo{
+        font-size: 25px;
+        line-height: 50px;   
+    }
+    .contenedor-dinamico__lista{
+        height: 700px;
+      } 
+    .imagenes{
+    width: 50%;
+    object-fit: cover;
+    }
+}
