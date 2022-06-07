@@ -82,7 +82,7 @@ body{
     width: 100%;
     height: 100%;
     position: absolute; 
-    background-image: url(../Pictures/restaurant2.webp);
+    background-image: url(assets/Pictures/restaurant2.webp);
     filter:brightness(0.4);
     background-repeat: no-repeat;
     background-size: cover; 
